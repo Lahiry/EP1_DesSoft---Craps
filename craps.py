@@ -182,3 +182,27 @@ if aposta == "Any Craps":
     if fichas == 0:
         time.sleep(1)
         print('Suas fichas acabaram!')
+
+
+# Aposta Twelve
+if aposta == "Twelve":
+    d1 = [1,2,3,4,5,6]
+    d2 = [1,2,3,4,5,6]
+    soma = random.choice(d1) + random.choice(d2)
+    time.sleep(1)
+    print('A soma dos lançamentos dos dados é {0}'.format(soma))
+    if soma == 12:
+        time.sleep(1)
+        print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet*30))
+        fichas += (bet*30)
+        time.sleep(1)
+        print('Suas fichas: {0}'.format(fichas))
+    else:
+        time.sleep(1)
+        print('Você não ganhou a aposta e perdeu {0} fichas.'.format(bet))
+        fichas -= bet
+        time.sleep(1)
+        print('Suas fichas: {0}'.format(fichas))
+    if fichas == 0:
+        time.sleep(1)
+        print('Suas fichas acabaram!')
