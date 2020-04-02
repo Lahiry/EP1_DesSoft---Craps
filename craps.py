@@ -123,3 +123,38 @@ if aposta == "Pass Line Bet":
         print('Você passou para a fase Point')
         Point = True
 
+
+# Aposta Field
+if aposta == "Field":
+    d1 = [1,2,3,4,5,6]
+    d2 = [1,2,3,4,5,6]
+    soma = random.choice(d1) + random.choice(d2)
+    time.sleep(1)
+    print('A soma dos lançamentos dos dados é {0}'.format(soma))
+    if soma == 5 or soma == 6 or soma == 7 or soma == 8:
+        time.sleep(1)
+        print('Você não ganhou a aposta e perdeu todas as suas {0} fichas!.'.format(fichas))
+        fichas -= fichas
+        time.sleep(1)
+        print('Suas fichas: {0}'.format(fichas))
+    if soma == 3 or soma == 4 or soma == 9 or soma == 10 or soma == 11:
+        time.sleep(1)
+        print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet))
+        fichas += bet
+        time.sleep(1)
+        print('Suas fichas: {0}'.format(fichas))
+    if soma == 2:
+        time.sleep(1)
+        print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet*2))
+        fichas += (bet*2)
+        time.sleep(1)
+        print('Suas fichas: {0}'.format(fichas))
+    if soma == 12:
+        time.sleep(1)
+        print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet*3))
+        fichas += (bet*3)
+        time.sleep(1)
+        print('Suas fichas: {0}'.format(fichas))
+    if fichas == 0:
+        time.sleep(1)
+        print('Suas fichas acabaram!')
