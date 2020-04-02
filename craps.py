@@ -124,9 +124,16 @@ if aposta == "Pass Line Bet":
         fichas -= bet
         time.sleep(1)
         print('Suas fichas: {0}'.format(fichas))
-    else:
+    if soma == 4 or soma == 5 or soma == 6 or soma == 8 or soma == 9 or soma == 10:
         print('Você passou para a fase Point')
         Point = True
+    # Fichas acabaram
+    if fichas == 0:
+        time.sleep(1)
+        print('Suas fichas acabaram!')
+        time.sleep(1)
+        print('Obrigado por jogar e volte sempre!')
+        sys.exit()
 
 
 # Aposta Field
@@ -160,9 +167,13 @@ if aposta == "Field":
         fichas += (bet*3)
         time.sleep(1)
         print('Suas fichas: {0}'.format(fichas))
+    # Fichas acabaram    
     if fichas == 0:
         time.sleep(1)
         print('Suas fichas acabaram!')
+        time.sleep(1)
+        print('Obrigado por jogar e volte sempre!')
+        sys.exit()
 
 
 # Aposta Any Craps
@@ -184,9 +195,13 @@ if aposta == "Any Craps":
         fichas -= bet
         time.sleep(1)
         print('Suas fichas: {0}'.format(fichas))
+    # Fichas acabaram    
     if fichas == 0:
         time.sleep(1)
         print('Suas fichas acabaram!')
+        time.sleep(1)
+        print('Obrigado por jogar e volte sempre!')
+        sys.exit()
 
 
 # Aposta Twelve
@@ -208,6 +223,10 @@ if aposta == "Twelve":
         fichas -= bet
         time.sleep(1)
         print('Suas fichas: {0}'.format(fichas))
+    # Fichas acabaram    
     if fichas == 0:
         time.sleep(1)
         print('Suas fichas acabaram!')
+        time.sleep(1)
+        print('Obrigado por jogar e volte sempre!')
+        sys.exit()
