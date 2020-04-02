@@ -84,3 +84,18 @@ if regras == 'não' or pronto == 'pronto':
     fichas = int(input('Quantas fichas deseja comprar?: '))
     time.sleep(1)
     comeout = True
+
+
+# Fase Come Out   
+if comeout == True:
+    time.sleep(1)
+    print('Fase: Come Out')
+    time.sleep(1)
+    print('Suas fichas: {0}'.format(fichas))
+    time.sleep(1)
+    bet = int(input('Quantas fichas você quer apostar?: '))
+    time.sleep(1)
+    aposta = input('Que tipo de aposta você quer fazer?: ')
+    while aposta != 'Pass Line Bet' and aposta != 'Field' and aposta != 'Any Craps'and aposta != 'Twelve':
+        aposta = input('Que tipo de aposta você quer fazer?: ')
+
