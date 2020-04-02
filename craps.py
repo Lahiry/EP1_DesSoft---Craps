@@ -69,6 +69,7 @@ Regras do Craps:
     derem 12, você ganha trinta vezes o que apostou, ou perde a aposta.
 
 """)
+    time.sleep(1)
     pronto = input('Digite "pronto" quando quiser começar: ')
     while pronto != "pronto":
         pronto = input('Digite "pronto" quando quiser começar: ')
@@ -80,6 +81,7 @@ if regras == 'não' or pronto == 'pronto':
     print('Vamos começar o jogo')
     time.sleep(1)
     print('Lembre-se que pode sair quando quiser digitando "sair" ao invés do tipo de aposta')
+    print('Se quiser ver os tipos de apostas que podem ser feitas no momento digite "?"')
     time.sleep(1)
     fichas = int(input('Quantas fichas deseja comprar?: '))
     time.sleep(1)
@@ -88,7 +90,6 @@ if regras == 'não' or pronto == 'pronto':
 
 # Fase Come Out   
 if comeout == True:
-    time.sleep(1)
     print('Fase: Come Out')
     time.sleep(1)
     print('Suas fichas: {0}'.format(fichas))
@@ -96,7 +97,11 @@ if comeout == True:
     bet = int(input('Quantas fichas você quer apostar?: '))
     time.sleep(1)
     aposta = input('Que tipo de aposta você quer fazer?: ')
-    while aposta != 'Pass Line Bet' and aposta != 'Field' and aposta != 'Any Craps'and aposta != 'Twelve':
+    while aposta != 'Pass Line Bet' and aposta != 'Field' and aposta != 'Any Craps' and aposta != 'Twelve':
+        # Apostas disponíveis (?)        
+        if aposta == "?":
+          if comeout == True:
+              print('Apostas disponíveis: Pass Line Bet, Field, Any Craps e Twelve')
         aposta = input('Que tipo de aposta você quer fazer?: ')
 
 
