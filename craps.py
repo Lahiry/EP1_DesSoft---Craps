@@ -111,7 +111,6 @@ if comeout == True:
             if aposta == "?":
                 if comeout == True:
                     print('Apostas: Pass Line Bet, Field, Any Craps e Twelve')
-                    aposta = input('Que tipo de aposta você quer fazer?: ')
             # Desistência
             if aposta == "sair":
                 print('Obrigado por jogar! Você saiu com {0} fichas!'.format(fichas))
