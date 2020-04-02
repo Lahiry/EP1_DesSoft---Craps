@@ -10,6 +10,7 @@ ready = input('Se quiser jogar digite "sim", se não, digite "não": ')
 while ready != 'sim' and ready != 'não':
     ready = input('Se quiser jogar digite "sim", se não, digite "não": ')
 
+
 # Perguntando se o jogador quer ver as regras    
 if ready == 'sim':
     print('Gostaria de ver as regras?')
@@ -20,6 +21,7 @@ if ready == 'sim':
 if ready == 'não':
     print('Obrigado pela sua visita! Volte sempre!')
     sys.exit()
+
 
 # Mostrando as regras do Craps caso o usuário queira
 if regras == 'sim':
@@ -70,3 +72,15 @@ Regras do Craps:
     pronto = input('Digite "pronto" quando quiser começar: ')
     while pronto != "pronto":
         pronto = input('Digite "pronto" quando quiser começar: ')
+
+
+# Iniciando o jogo
+if regras == 'não' or pronto == 'pronto':
+    time.sleep(1)
+    print('Vamos começar o jogo')
+    time.sleep(1)
+    print('Lembre-se que pode sair quando quiser digitando "sair" ao invés do tipo de aposta')
+    time.sleep(1)
+    fichas = int(input('Quantas fichas deseja comprar?: '))
+    time.sleep(1)
+    comeout = True
