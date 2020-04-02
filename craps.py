@@ -98,6 +98,11 @@ if comeout == True:
         print('Suas fichas: {0}'.format(fichas))
         time.sleep(1)
         bet = int(input('Quantas fichas você quer apostar?: '))
+        while bet > fichas:
+            time.sleep(1)
+            print('Você não tem tantas fichas!')
+            time.sleep(1)
+            bet = int(input('Quantas fichas você quer apostar?: '))
         time.sleep(1)
         aposta = input('Que tipo de aposta você quer fazer?: ')
         while aposta != 'Pass Line Bet' and aposta != 'Field' and aposta != 'Any Craps' and aposta != 'Twelve':
@@ -154,7 +159,7 @@ if comeout == True:
             print('A soma dos lançamentos dos dados é {0}'.format(soma))
             if soma == 5 or soma == 6 or soma == 7 or soma == 8:
                 time.sleep(1)
-                print('Você não ganhou a aposta e perdeu todas as suas {0} fichas!.'.format(fichas))
+                print('Você não ganhou a aposta e perdeu {0} fichas!.'.format(fichas))
                 fichas -= fichas
                 time.sleep(1)
                 print('Suas fichas: {0}'.format(fichas))
@@ -220,22 +225,22 @@ if comeout == True:
             soma = random.choice(d1) + random.choice(d2)
             time.sleep(1)
             print('A soma dos lançamentos dos dados é {0}'.format(soma))
-        if soma == 12:
-            time.sleep(1)
-            print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet*30))
-            fichas += (bet*30)
-            time.sleep(1)
-            print('Suas fichas: {0}'.format(fichas))
-        else:
-            time.sleep(1)
-            print('Você não ganhou a aposta e perdeu {0} fichas.'.format(bet))
-            fichas -= bet
-            time.sleep(1)
-            print('Suas fichas: {0}'.format(fichas))
-        # Fichas acabaram    
-        if fichas == 0:
-            time.sleep(1)
-            print('Suas fichas acabaram!')
-            time.sleep(1)
-            print('Obrigado por jogar e volte sempre!')
-            sys.exit()
+            if soma == 12:
+                time.sleep(1)
+                print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet*30))
+                fichas += (bet*30)
+                time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
+            else:
+                time.sleep(1)
+                print('Você não ganhou a aposta e perdeu {0} fichas.'.format(bet))
+                fichas -= bet
+                time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
+            # Fichas acabaram    
+            if fichas == 0:
+                time.sleep(1)
+                print('Suas fichas acabaram!')
+                time.sleep(1)
+                print('Obrigado por jogar e volte sempre!')
+                sys.exit()
