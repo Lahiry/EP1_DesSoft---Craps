@@ -82,7 +82,7 @@ if regras == 'não' or pronto == 'pronto':
     time.sleep(1)
     print('Lembre-se que pode sair quando quiser digitando "sair" ao invés do tipo de aposta')
     time.sleep(1)
-    print('Se quiser ver os tipos de apostas que podem ser feitas no momento digite "?"')
+    print('Se quiser ver os tipos de apostas que podem ser feitas digite "?"')
     time.sleep(1)
     fichas = int(input('Quantas fichas deseja comprar?: '))
     time.sleep(1)
@@ -93,6 +93,7 @@ if regras == 'não' or pronto == 'pronto':
 if comeout == True:
     aposta = "x"
     while fichas != 0 and aposta != "sair":
+        Point = False
         print('Fase: Come Out')
         time.sleep(1)
         print('Suas fichas: {0}'.format(fichas))
@@ -109,13 +110,15 @@ if comeout == True:
             # Apostas disponíveis (?)        
             if aposta == "?":
                 if comeout == True:
-                    print('Apostas disponíveis: Pass Line Bet, Field, Any Craps e Twelve')
+                    print('Apostas: Pass Line Bet, Field, Any Craps e Twelve')
                     aposta = input('Que tipo de aposta você quer fazer?: ')
             # Desistência
             if aposta == "sair":
                 print('Obrigado por jogar! Você saiu com {0} fichas!'.format(fichas))
                 print('Volte sempre!')
                 sys.exit()
+            time.sleep(1)
+            aposta = input('Que tipo de aposta você quer fazer?: ')
 
 
         # Aposta Pass Line Bet   
@@ -138,7 +141,8 @@ if comeout == True:
                 time.sleep(1)
                 print('Suas fichas: {0}'.format(fichas))
             if soma == 4 or soma == 5 or soma == 6 or soma == 8 or soma == 9 or soma == 10:
-                print('Você passou para a fase Point')
+                time.sleep(1)
+                print('Você passou para a fase Point!')
                 Point = True
             # Fichas acabaram
             if fichas == 0:
@@ -148,6 +152,29 @@ if comeout == True:
                 print('Obrigado por jogar e volte sempre!')
                 sys.exit()
     
+        # Fase Point
+        if Point == True:
+            point = soma
+            time.sleep(1)
+            print('Fase: Point')
+            time.sleep(1)
+            print('Suas fichas: {0}'.format(fichas))
+            time.sleep(1)
+            print('O Point da fase é {0}'.format(point))
+            dados_point = random.choice(d1) + random.choice(d2)
+            while dados_point != point and dados_point != 7:
+                time.sleep(1)
+                print('Você tirou {0} nos dados, continue jogando!'.format(dados_point))
+                dados_point = random.choice(d1) + random.choice(d2)
+            if dados_point == point:
+                print('Você acertou o Point e ganhou {0} fichas!'.format(bet))
+                time.sleep(1)
+                fichas += bet
+                print('Suas fichas: {0}'.format(fichas))
+            if dados_point == 7:
+                print('Você tirou 7 nos dados e perdeu {0} fichas!'.format(bet))
+                fichas -= bet
+            
 
 
         # Aposta Field
