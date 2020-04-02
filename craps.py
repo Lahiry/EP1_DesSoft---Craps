@@ -187,7 +187,7 @@ if comeout == True:
             if soma == 5 or soma == 6 or soma == 7 or soma == 8:
                 time.sleep(1)
                 print('Você não ganhou a aposta e perdeu {0} fichas!.'.format(fichas))
-                fichas -= fichas
+                fichas -= bet
                 time.sleep(1)
                 print('Suas fichas: {0}'.format(fichas))
             if soma == 3 or soma == 4 or soma == 9 or soma == 10 or soma == 11:
