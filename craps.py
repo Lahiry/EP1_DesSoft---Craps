@@ -44,12 +44,11 @@ Regras do Craps:
     Os tipos de apostas são as seguintes:
 
 
-    Pass Line Bet – Esta aposta só pode ser feita na fase de “Come Out”. Se a soma dos
-    dados lançados for 7 ou 11, você ganha (por exemplo: se apostou 10 fichas, mantem
-    as 10 e recebe mais 10). Já se os dados somarem 2, 3 ou 12, (chamado de craps) você
-    perde (ou seja, se apostou 10 fichas, não recebe nada e perde essas 10). Já se a soma
-    dos dados der 4, 5, 6, 8, 9 ou 10, o jogo muda para a fase de “Point” e o objetivo muda. 
-    A aposta já feita continua valendo, porém, o valor tirado se torna o Point e para você
+    Pass Line Bet –  Se a soma dos dados lançados for 7 ou 11, você ganha (por exemplo:
+    se apostou 10 fichas, mantem as 10 e recebe mais 10). Já se os dados somarem 2, 3 ou 12,
+    (chamado de craps) você perde (ou seja, se apostou 10 fichas, não recebe nada e perde essas 10).
+    Já se a soma dos dados der 4, 5, 6, 8, 9 ou 10, o jogo muda para a fase de “Point” e o objetivo 
+    muda. A aposta já feita continua valendo, porém, o valor tirado se torna o Point e para você
     ganhar agora, a soma do novo lançamento dos dados deve ser igual ao do Point. Se a
     nova soma dos dados é a mesma do que foi guardado no Point, você ganha o mesmo
     valor que apostou. Se sair uma soma de valor 7, você perde tudo. Caso saia qualquer
@@ -58,19 +57,19 @@ Regras do Craps:
     rodada e deixando começar uma nova em “Come Out”.
 
 
-    Field – Esta aposta pode ser feita em qualquer fase do jogo. Nesta aposta se 
-    os dados derem 5, 6, 7 ou 8, você perde tudo, já se derem 3, 4, 9, 10, ou 11, 
-    você ganha o mesmo valor que apostou. Já se a soma for 2, você ganha o dobro do
-    que apostou (se apostou 10 fichas, fica com as 10 e ganha mais 20). Finalmente se 
-    sai 12 nos dados você ganha o triplo (se apostou 10 fichas, fica com as 10 e ganha mais 30).
+    Field – Nesta aposta se  os dados derem 5, 6, 7 ou 8, você perde tudo, já se derem 
+    3, 4, 9, 10, ou 11,  você ganha o mesmo valor que apostou. Já se a soma for 2, você 
+    ganha o dobro do que apostou (se apostou 10 fichas, fica com as 10 e ganha mais 20). 
+    Finalmente se sai 12 nos dados você ganha o triplo (se apostou 10 fichas, fica com as
+    10 e ganha mais 30).
 
 
-    Any Craps – Esta aposta pode ser feita em qualquer fase do jogo. Nesta aposta se o
-    dados derem 2, 3 ou 12, você ganha sete vezes o que apostou, caso contrário perde a aposta.
+    Any Craps – Nesta aposta se o sdados derem 2, 3 ou 12, você ganha sete vezes o que apostou, 
+    caso contrário perde a aposta.
 
 
-    Twelve – Esta aposta pode ser feita em qualquer fase do jogo. Nesta aposta se o dados
-    derem 12, você ganha trinta vezes o que apostou, ou perde a aposta.
+    Twelve –  Nesta aposta se o dados derem 12, você ganha trinta vezes o que apostou, ou perde
+    a aposta.
 
 """)
     time.sleep(1)
@@ -134,7 +133,7 @@ if comeout == True:
         #n_apostas = int(input('Quantas apostas você quer fazer?: '))
         #if n_apostas == 1:
         aposta = input('Que tipo de aposta você quer fazer?: ')
-        #while aposta != 'Pass Line Bet' and aposta != 'Field' and aposta != 'Any Craps' and aposta != 'Twelve':
+        # Apostas Múltiplas
         while 'Pass Line Bet' not in aposta and 'Field' not in aposta and 'Any Craps' not in aposta and 'Twelve' not in aposta:
             # Apostas disponíveis (?)        
             if aposta == "?":
