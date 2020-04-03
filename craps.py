@@ -84,7 +84,13 @@ if regras == 'não' or pronto == 'pronto':
     time.sleep(1)
     print('Se quiser ver os tipos de apostas que podem ser feitas digite "?"')
     time.sleep(1)
-    fichas = int(input('Quantas fichas deseja comprar?: '))
+    # Verificando se fichas é um número inteiro
+    fichas = 'x'
+    while not isinstance(fichas, int):
+        try:
+            fichas = int(input('Quantas fichas deseja comprar?: '))
+        except ValueError:
+            print('?')
     time.sleep(1)
     comeout = True
 
@@ -98,12 +104,24 @@ if comeout == True:
         time.sleep(1)
         print('Suas fichas: {0}'.format(fichas))
         time.sleep(1)
-        bet = int(input('Quantas fichas você quer apostar?: '))
+        # Verificando se bet é um número inteiro
+        bet = 'x'
+        while not isinstance(bet , int): 
+            try:
+                bet = int(input('Quantas fichas você quer apostar?: '))
+            except ValueError:
+                print('?')
         while bet > fichas:
             time.sleep(1)
             print('Você não tem tantas fichas!')
             time.sleep(1)
-            bet = int(input('Quantas fichas você quer apostar?: '))
+            # Verificando se bet é um número inteiro
+            bet = 'x'
+            while not isinstance(bet , int): 
+                try:
+                    bet = int(input('Quantas fichas você quer apostar?: '))
+                except ValueError:
+                    print('?')
         time.sleep(1)
         aposta = input('Que tipo de aposta você quer fazer?: ')
         while aposta != 'Pass Line Bet' and aposta != 'Field' and aposta != 'Any Craps' and aposta != 'Twelve':
