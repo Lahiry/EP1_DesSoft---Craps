@@ -13,18 +13,22 @@ while ready != 'sim' and ready != 'não':
 
 # Perguntando se o jogador quer ver as regras    
 if ready == 'sim':
+    time.sleep(1)
     print('Gostaria de ver as regras?')
     time.sleep(1)
     regras = input('Digite "sim" para ver as regras ou "não" para começar a jogar: ')
     while regras != 'sim' and regras != 'não':
         regras = input('Digite "sim" para ver as regras ou "não" para começar a jogar: ')
 if ready == 'não':
+    time.sleep(1)
     print('Obrigado pela sua visita! Volte sempre!')
+    time.sleep(1)
     sys.exit()
 
 
 # Mostrando as regras do Craps caso o usuário queira
 if regras == 'sim':
+    time.sleep(1)
     print("""\
     
 Regras do Craps:
@@ -37,7 +41,7 @@ Regras do Craps:
     e poderá fazer apostas de mais de um tipo por vez.
 
 
-    Os tipo de apostas são as seguintes:
+    Os tipos de apostas são as seguintes:
 
 
     Pass Line Bet – Esta aposta só pode ser feita na fase de “Come Out”. Se a soma dos
@@ -160,13 +164,11 @@ if comeout == True:
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet))
                 fichas += bet
                 time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
             if soma == 2 or soma == 3 or soma == 12:
                 time.sleep(1)
                 print('Você não ganhou a aposta e perdeu {0} fichas.'.format(bet))
                 fichas -= bet
                 time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
             if soma == 4 or soma == 5 or soma == 6 or soma == 8 or soma == 9 or soma == 10:
                 time.sleep(1)
                 print('Você passou para a fase Point!')
@@ -191,7 +193,6 @@ if comeout == True:
             dados_point = random.choice(d1) + random.choice(d2)
             while dados_point != point and dados_point != 7:
                 time.sleep(1)
-                time.sleep(1)
                 print('Lançando dados:')
                 time.sleep(1)
                 print('.')
@@ -215,7 +216,6 @@ if comeout == True:
                 print('Você acertou o Point e ganhou {0} fichas!'.format(bet))
                 time.sleep(1)
                 fichas += bet
-                print('Suas fichas: {0}'.format(fichas))
             if dados_point == 7:
                 time.sleep(1)
                 print('Lançando dados:')
@@ -228,6 +228,14 @@ if comeout == True:
                 time.sleep(1)
                 print('Você tirou 7 nos dados e perdeu {0} fichas!'.format(bet))
                 fichas -= bet
+                time.sleep(1)
+            # Fichas acabaram
+            if fichas == 0:
+                time.sleep(1)
+                print('Suas fichas acabaram!')
+                time.sleep(1)
+                print('Obrigado por jogar e volte sempre!')
+                sys.exit()
             
 
 
@@ -253,25 +261,21 @@ if comeout == True:
                 print('Você não ganhou a aposta e perdeu {0} fichas!.'.format(fichas))
                 fichas -= bet
                 time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
             if soma == 3 or soma == 4 or soma == 9 or soma == 10 or soma == 11:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet))
                 fichas += bet
                 time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
             if soma == 2:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet*2))
                 fichas += (bet*2)
                 time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
             if soma == 12:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet*3))
                 fichas += (bet*3)
                 time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
             # Fichas acabaram    
             if fichas == 0:
                 time.sleep(1)
@@ -303,13 +307,11 @@ if comeout == True:
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet*7))
                 fichas += (bet*7)
                 time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
             else:
                 time.sleep(1)
                 print('Você não ganhou a aposta e perdeu {0} fichas.'.format(bet))
                 fichas -= bet
                 time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
                 # Fichas acabaram    
             if fichas == 0:
                 time.sleep(1)
@@ -341,13 +343,11 @@ if comeout == True:
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet*30))
                 fichas += (bet*30)
                 time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
             else:
                 time.sleep(1)
                 print('Você não ganhou a aposta e perdeu {0} fichas.'.format(bet))
                 fichas -= bet
                 time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
             # Fichas acabaram    
             if fichas == 0:
                 time.sleep(1)
