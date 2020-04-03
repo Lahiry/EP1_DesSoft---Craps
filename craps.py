@@ -1,9 +1,11 @@
-# Introduzindo o jogo
+# Importando bibliotecas necessárias
 import sys 
 import time
 import random
-print('Seja bem vindo ao Lahiry\'s Cassino!')
+# Introduzindo o jogo
 time.sleep(1)
+print('Seja bem vindo ao Lahiry\'s Cassino!')
+time.sleep(2)
 print('Está pronto para uma partida de Craps?')
 time.sleep(1)
 ready = input('Se quiser jogar digite "sim", se não, digite "não": ')
@@ -19,6 +21,7 @@ if ready == 'sim':
     regras = input('Digite "sim" para ver as regras ou "não" para começar a jogar: ')
     while regras != 'sim' and regras != 'não':
         regras = input('Digite "sim" para ver as regras ou "não" para começar a jogar: ')
+# Saindo do cassino caso o jogador não queira mais jogar
 if ready == 'não':
     time.sleep(1)
     print('Obrigado pela sua visita! Volte sempre!')
@@ -73,6 +76,7 @@ Regras do Craps:
 
 """)
     time.sleep(1)
+    # Perguntando se o jogador está pronto para começar a jogar
     pronto = input('Digite "pronto" quando quiser começar: ')
     while pronto != "pronto":
         pronto = input('Digite "pronto" quando quiser começar: ')
@@ -82,11 +86,11 @@ Regras do Craps:
 if regras == 'não' or pronto == 'pronto':
     time.sleep(1)
     print('Vamos começar o jogo')
-    time.sleep(1)
+    time.sleep(2)
     print('Lembre-se que pode sair quando quiser digitando "sair" ao invés do tipo de aposta')
-    time.sleep(1)
+    time.sleep(2)
     print('Se quiser ver os tipos de apostas que podem ser feitas digite "?"')
-    time.sleep(1)
+    time.sleep(2)
     # Verificando se fichas é um número inteiro
     fichas = 'x'
     while not isinstance(fichas, int):
@@ -102,29 +106,28 @@ if regras == 'não' or pronto == 'pronto':
 # Fase Come Out   
 if comeout == True:
     aposta = "x"
+    # Continuar o jogo até que o jogador perca todas suas fichas ou decida sair
     while fichas != 0 and aposta != "sair":
         Point = False
         print('Fase: Come Out')
         time.sleep(1)
         print('Suas fichas: {0}'.format(fichas))
         time.sleep(1)
-        # Apostas multiplas
+        # Apostas múltiplas
         aposta = input('Que tipos de aposta você quer fazer?: ')
-        # Apostas Múltiplas
         while 'Pass Line Bet' not in aposta and 'Field' not in aposta and 'Any Craps' not in aposta and 'Twelve' not in aposta:
             # Apostas disponíveis (?)        
             if aposta == "?":
                 if comeout == True:
+                    time.sleep(1)
                     print('Apostas: Pass Line Bet, Field, Any Craps e Twelve')
+                    aposta = input('Que tipos de aposta você quer fazer?: ')
             # Desistência
             if aposta == "sair":
                 print('Obrigado por jogar! Você saiu com {0} fichas!'.format(fichas))
                 print('Volte sempre!')
                 sys.exit()
             time.sleep(1)
-            print('?????')
-            time.sleep(1)
-            aposta = input('Que tipos de aposta você quer fazer?: ')
 
 
 
@@ -140,6 +143,7 @@ if comeout == True:
                 except ValueError:
                     print('?????')
                     time.sleep(1)
+            # Checando se o jogador pode fazer a aposta
             while pass_line_bet_bet > fichas:
                 time.sleep(1)
                 print('Você não tem tantas fichas!')
@@ -167,6 +171,7 @@ if comeout == True:
                 except ValueError:
                     print('?????')
                     time.sleep(1)
+            # Checando se o jogador pode fazer a aposta
             while field_bet > fichas:
                 time.sleep(1)
                 print('Você não tem tantas fichas!')
@@ -194,6 +199,7 @@ if comeout == True:
                 except ValueError:
                     print('?????')
                     time.sleep(1)
+            # Checando se o jogador pode fazer a aposta
             while any_craps_bet > fichas:
                 time.sleep(1)
                 print('Você não tem tantas fichas!')
@@ -221,6 +227,7 @@ if comeout == True:
                 except ValueError:
                     print('?????')
                     time.sleep(1)
+            # Checando se o jogador pode fazer a aposta
             while twelve_bet > fichas:
                 time.sleep(1)
                 print('Você não tem tantas fichas!')
@@ -245,8 +252,10 @@ if comeout == True:
         d2 = [1,2,3,4,5,6]
         dado_1 = ["⚀","⚁","⚂","⚃","⚄","⚅"]
         dado_2 = ["⚀","⚁","⚂","⚃","⚄","⚅"]
+        # Somando os números aleatórios tirados para cada dado
         soma = random.choice(d1) + random.choice(d2)
         time.sleep(1)
+        # Mecânica de lançamento dos dados
         print('Lançando dados:')
         time.sleep(1)
         print(random.choice(dado_1), random.choice(dado_2))
@@ -255,6 +264,7 @@ if comeout == True:
         time.sleep(1)
         print(random.choice(dado_1), random.choice(dado_2))
         time.sleep(1)
+        # Informando o resultado dos dados
         print('A soma do lançamento dos dados é {0}'.format(soma))
 
 
@@ -264,17 +274,15 @@ if comeout == True:
         if "Pass Line Bet" in aposta:
             time.sleep(1)
             print('Aposta: Pass Line Bet')
+            # Jogador ganhou a aposta
             if soma == 7 or soma == 11:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(pass_line_bet_bet))
                 fichas += pass_line_bet_bet + pass_line_bet_bet
-                time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
+            # Jogador perdeu a aposta
             if soma == 2 or soma == 3 or soma == 12:
                 time.sleep(1)
                 print('Você não ganhou a aposta e perdeu {0} fichas.'.format(pass_line_bet_bet)) 
-                time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
                 # Fichas acabaram
                 if fichas < 1:
                     time.sleep(1)
@@ -282,6 +290,7 @@ if comeout == True:
                     time.sleep(1)
                     print('Obrigado por jogar e volte sempre!')
                     sys.exit()
+            # Jogador passou para fase Point
             if soma == 4 or soma == 5 or soma == 6 or soma == 8 or soma == 9 or soma == 10:
                 time.sleep(1)
                 print('Você passou para a fase Point!')
@@ -296,9 +305,11 @@ if comeout == True:
             time.sleep(1)
             print('Suas fichas: {0}'.format(fichas))
             time.sleep(1)
+            # Informando o Point
             print('O Point da fase é {0}'.format(point))
             time.sleep(1)
             dados_point = random.choice(d1) + random.choice(d2)
+            # Lançando dados até um veredito
             while dados_point != point and dados_point != 7:
                 print('Lançando dados:')
                 time.sleep(1)
@@ -310,6 +321,7 @@ if comeout == True:
                 time.sleep(1)
                 print('Você tirou {0} nos dados, continue jogando!'.format(dados_point))
                 dados_point = random.choice(d1) + random.choice(d2)
+            # Jogador acertou o point
             if dados_point == point:
                 time.sleep(1)
                 print('Lançando dados:')
@@ -323,7 +335,7 @@ if comeout == True:
                 print('Você acertou o Point e ganhou {0} fichas!'.format(pass_line_bet_bet))
                 time.sleep(1)
                 fichas += pass_line_bet_bet + pass_line_bet_bet
-                print('Suas fichas: {0}'.format(fichas))
+            # Jogador perdeu a aposta
             if dados_point == 7:
                 time.sleep(1)
                 print('Lançando dados:')
@@ -336,7 +348,6 @@ if comeout == True:
                 time.sleep(1)
                 print('Você tirou 7 nos dados e perdeu {0} fichas!'.format(pass_line_bet_bet))
                 time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
                 # Fichas acabaram
                 if fichas < 1:
                     time.sleep(1)
@@ -352,11 +363,10 @@ if comeout == True:
         if "Field" in aposta:
             time.sleep(1)
             print('Aposta: Field')
+            # Jogador perdeu a aposta
             if soma == 5 or soma == 6 or soma == 7 or soma == 8:
                 time.sleep(1)
                 print('Você não ganhou a aposta e perdeu {0} fichas!.'.format(field_bet))
-                time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
                 # Fichas acabaram
                 if fichas < 1:
                     time.sleep(1)
@@ -364,24 +374,21 @@ if comeout == True:
                     time.sleep(1)
                     print('Obrigado por jogar e volte sempre!')
                     sys.exit()
+            # Jogador ganhou a aposta
             if soma == 3 or soma == 4 or soma == 9 or soma == 10 or soma == 11:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(field_bet))
                 fichas += field_bet + field_bet
-                time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
+            # Jogador ganhou a aposta x2
             if soma == 2:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(field_bet*2))
                 fichas += (field_bet*2) + field_bet
-                time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
+            # Jogador ganhou a aposta x3
             if soma == 12:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(field_bet*3))
                 fichas += (field_bet*3) + field_bet
-                time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
 
 
 
@@ -389,17 +396,15 @@ if comeout == True:
         if "Any Craps" in aposta:
             time.sleep(1)
             print('Aposta: Any Craps')
+            # Jogador ganhou a aposta
             if soma == 2 or soma == 3 or soma == 12:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(any_craps_bet*7))
                 fichas += (any_craps_bet*7) + any_craps_bet
-                time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
+            # Jogador perdeu a aposta
             else:
                 time.sleep(1)
                 print('Você não ganhou a aposta e perdeu {0} fichas.'.format(any_craps_bet))
-                time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
                 # Fichas acabaram    
                 if fichas < 1:
                     time.sleep(1)
@@ -413,17 +418,15 @@ if comeout == True:
         if "Twelve" in aposta:
             time.sleep(1)
             print('Aposta: Twelve')
+            # Jogador ganhou a aposta (12)
             if soma == 12:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(twelve_bet*30))
                 fichas += (twelve_bet*30) + twelve_bet
-                time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
+            # Jogador perdeu a aposta
             else:
                 time.sleep(1)
                 print('Você não ganhou a aposta e perdeu {0} fichas.'.format(twelve_bet))
-                time.sleep(1)
-                print('Suas fichas: {0}'.format(fichas))
                 # Fichas acabaram    
                 if fichas < 1:
                     time.sleep(1)
