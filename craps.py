@@ -144,6 +144,8 @@ if comeout == True:
                 time.sleep(1)
                 print('Você não tem tantas fichas!')
                 time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
+                time.sleep(1)
                 # Verificando se pass_line_bet_bet é um número inteiro
                 pass_line_bet_bet = 'x'
                 while not isinstance(pass_line_bet_bet , int): 
@@ -168,6 +170,8 @@ if comeout == True:
             while field_bet > fichas:
                 time.sleep(1)
                 print('Você não tem tantas fichas!')
+                time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
                 time.sleep(1)
                 # Verificando se field_bet é um número inteiro
                 field_bet = 'x'
@@ -194,6 +198,8 @@ if comeout == True:
                 time.sleep(1)
                 print('Você não tem tantas fichas!')
                 time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
+                time.sleep(1)
                 # Verificando se any_craps_bet é um número inteiro
                 any_craps_bet = 'x'
                 while not isinstance(any_craps_bet , int): 
@@ -219,6 +225,8 @@ if comeout == True:
                 time.sleep(1)
                 print('Você não tem tantas fichas!')
                 time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
+                time.sleep(1)
                 # Verificando se twelve_bet é um número inteiro
                 twelve_bet = 'x'
                 while not isinstance(twelve_bet , int): 
@@ -235,17 +243,20 @@ if comeout == True:
         # Lançamento de dados para todas apostas feitas
         d1 = [1,2,3,4,5,6]
         d2 = [1,2,3,4,5,6]
+        dado_1 = ["⚀","⚁","⚂","⚃","⚄","⚅"]
+        dado_2 = ["⚀","⚁","⚂","⚃","⚄","⚅"]
         soma = random.choice(d1) + random.choice(d2)
         time.sleep(1)
         print('Lançando dados:')
         time.sleep(1)
-        print('.')
+        print(random.choice(dado_1), random.choice(dado_2))
         time.sleep(1)
-        print('.')
+        print(random.choice(dado_1), random.choice(dado_2))
         time.sleep(1)
-        print('.')
+        print(random.choice(dado_1), random.choice(dado_2))
         time.sleep(1)
         print('A soma do lançamento dos dados é {0}'.format(soma))
+
 
 
 
@@ -258,10 +269,12 @@ if comeout == True:
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(pass_line_bet_bet))
                 fichas += pass_line_bet_bet + pass_line_bet_bet
                 time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
             if soma == 2 or soma == 3 or soma == 12:
                 time.sleep(1)
                 print('Você não ganhou a aposta e perdeu {0} fichas.'.format(pass_line_bet_bet)) 
                 time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
                 # Fichas acabaram
                 if fichas < 1:
                     time.sleep(1)
@@ -284,16 +297,16 @@ if comeout == True:
             print('Suas fichas: {0}'.format(fichas))
             time.sleep(1)
             print('O Point da fase é {0}'.format(point))
+            time.sleep(1)
             dados_point = random.choice(d1) + random.choice(d2)
             while dados_point != point and dados_point != 7:
-                time.sleep(1)
                 print('Lançando dados:')
                 time.sleep(1)
-                print('.')
+                print(random.choice(dado_1), random.choice(dado_2))
                 time.sleep(1)
-                print('.')
+                print(random.choice(dado_1), random.choice(dado_2))
                 time.sleep(1)
-                print('.')
+                print(random.choice(dado_1), random.choice(dado_2))
                 time.sleep(1)
                 print('Você tirou {0} nos dados, continue jogando!'.format(dados_point))
                 dados_point = random.choice(d1) + random.choice(d2)
@@ -301,27 +314,29 @@ if comeout == True:
                 time.sleep(1)
                 print('Lançando dados:')
                 time.sleep(1)
-                print('.')
+                print(random.choice(dado_1), random.choice(dado_2))
                 time.sleep(1)
-                print('.')
+                print(random.choice(dado_1), random.choice(dado_2))
                 time.sleep(1)
-                print('.')
+                print(random.choice(dado_1), random.choice(dado_2))
                 time.sleep(1)
                 print('Você acertou o Point e ganhou {0} fichas!'.format(pass_line_bet_bet))
                 time.sleep(1)
                 fichas += pass_line_bet_bet + pass_line_bet_bet
+                print('Suas fichas: {0}'.format(fichas))
             if dados_point == 7:
                 time.sleep(1)
                 print('Lançando dados:')
                 time.sleep(1)
-                print('.')
+                print(random.choice(dado_1), random.choice(dado_2))
                 time.sleep(1)
-                print('.')
+                print(random.choice(dado_1), random.choice(dado_2))
                 time.sleep(1)
-                print('.')
+                print(random.choice(dado_1), random.choice(dado_2))
                 time.sleep(1)
                 print('Você tirou 7 nos dados e perdeu {0} fichas!'.format(pass_line_bet_bet))
                 time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
                 # Fichas acabaram
                 if fichas < 1:
                     time.sleep(1)
@@ -341,6 +356,7 @@ if comeout == True:
                 time.sleep(1)
                 print('Você não ganhou a aposta e perdeu {0} fichas!.'.format(field_bet))
                 time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
                 # Fichas acabaram
                 if fichas < 1:
                     time.sleep(1)
@@ -353,16 +369,19 @@ if comeout == True:
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(field_bet))
                 fichas += field_bet + field_bet
                 time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
             if soma == 2:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(field_bet*2))
                 fichas += (field_bet*2) + field_bet
                 time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
             if soma == 12:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(field_bet*3))
                 fichas += (field_bet*3) + field_bet
                 time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
 
 
 
@@ -375,10 +394,12 @@ if comeout == True:
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(any_craps_bet*7))
                 fichas += (any_craps_bet*7) + any_craps_bet
                 time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
             else:
                 time.sleep(1)
                 print('Você não ganhou a aposta e perdeu {0} fichas.'.format(any_craps_bet))
                 time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
                 # Fichas acabaram    
                 if fichas < 1:
                     time.sleep(1)
@@ -397,10 +418,12 @@ if comeout == True:
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(twelve_bet*30))
                 fichas += (twelve_bet*30) + twelve_bet
                 time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
             else:
                 time.sleep(1)
                 print('Você não ganhou a aposta e perdeu {0} fichas.'.format(twelve_bet))
                 time.sleep(1)
+                print('Suas fichas: {0}'.format(fichas))
                 # Fichas acabaram    
                 if fichas < 1:
                     time.sleep(1)
