@@ -121,6 +121,7 @@ if comeout == True:
                 if comeout == True:
                     time.sleep(1)
                     print('Apostas: Pass Line Bet, Field, Any Craps e Twelve')
+                    time.sleep(1)
                     aposta = input('Que tipos de aposta você quer fazer?: ')
             # Desistência
             if aposta == "sair":
