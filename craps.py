@@ -129,20 +129,7 @@ if comeout == True:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         # Apostando diferentes quantidades em diferentes apostas
-
         # Aposta em Pass Line Bet
         if "Pass Line Bet" in aposta:
             # Verificando se pass_line_bet_bet é um número inteiro
@@ -166,6 +153,7 @@ if comeout == True:
                         print('?????')
                         time.sleep(1)
             fichas -= pass_line_bet_bet
+
 
         # Aposta em Field
         if "Field" in aposta:
@@ -191,6 +179,7 @@ if comeout == True:
                         time.sleep(1)
             fichas -= field_bet
 
+
         # Aposta em Any Craps
         if "Any Craps" in aposta:
             # Verificando se any_craps_bet é um número inteiro
@@ -215,6 +204,7 @@ if comeout == True:
                         time.sleep(1)
             fichas -= any_craps_bet
  
+
         # Aposta em Twelve
         if "Twelve" in aposta:
             # Verificando se twelve_bet é um número inteiro
@@ -242,23 +232,20 @@ if comeout == True:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        # Lançamento de dados para todas apostas feitas
+        d1 = [1,2,3,4,5,6]
+        d2 = [1,2,3,4,5,6]
+        soma = random.choice(d1) + random.choice(d2)
+        time.sleep(1)
+        print('Lançando dados:')
+        time.sleep(1)
+        print('.')
+        time.sleep(1)
+        print('.')
+        time.sleep(1)
+        print('.')
+        time.sleep(1)
+        print('A soma do lançamento dos dados é {0}'.format(soma))
 
 
 
@@ -266,19 +253,6 @@ if comeout == True:
         if "Pass Line Bet" in aposta:
             time.sleep(1)
             print('Aposta: Pass Line Bet')
-            d1 = [1,2,3,4,5,6]
-            d2 = [1,2,3,4,5,6]
-            soma = random.choice(d1) + random.choice(d2)
-            time.sleep(1)
-            print('Lançando dados:')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('A soma do lançamento dos dados é {0}'.format(soma))
             if soma == 7 or soma == 11:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(pass_line_bet_bet))
@@ -363,19 +337,6 @@ if comeout == True:
         if "Field" in aposta:
             time.sleep(1)
             print('Aposta: Field')
-            d1 = [1,2,3,4,5,6]
-            d2 = [1,2,3,4,5,6]
-            soma = random.choice(d1) + random.choice(d2)
-            time.sleep(1)
-            print('Lançando dados:')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('A soma do lançamento dos dados é {0}'.format(soma))
             if soma == 5 or soma == 6 or soma == 7 or soma == 8:
                 time.sleep(1)
                 print('Você não ganhou a aposta e perdeu {0} fichas!.'.format(field_bet))
@@ -409,19 +370,6 @@ if comeout == True:
         if "Any Craps" in aposta:
             time.sleep(1)
             print('Aposta: Any Craps')
-            d1 = [1,2,3,4,5,6]
-            d2 = [1,2,3,4,5,6]
-            soma = random.choice(d1) + random.choice(d2)
-            time.sleep(1)
-            print('Lançando dados:')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('A soma do lançamento dos dados é {0}'.format(soma))
             if soma == 2 or soma == 3 or soma == 12:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(any_craps_bet*7))
@@ -444,19 +392,6 @@ if comeout == True:
         if "Twelve" in aposta:
             time.sleep(1)
             print('Aposta: Twelve')
-            d1 = [1,2,3,4,5,6]
-            d2 = [1,2,3,4,5,6]
-            soma = random.choice(d1) + random.choice(d2)
-            time.sleep(1)
-            print('Lançando dados:')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('.')
-            time.sleep(1)
-            print('A soma do lançamento dos dados é {0}'.format(soma))
             if soma == 12:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(twelve_bet*30))
