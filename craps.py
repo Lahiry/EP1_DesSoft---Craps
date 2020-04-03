@@ -94,7 +94,8 @@ if regras == 'não' or pronto == 'pronto':
         try:
             fichas = int(input('Quantas fichas deseja comprar?: '))
         except ValueError:
-            print('?')
+            print('?????')
+            time.sleep(1)
     time.sleep(1)
     comeout = True
 
@@ -114,7 +115,8 @@ if comeout == True:
             try:
                 bet = int(input('Quantas fichas você quer apostar?: '))
             except ValueError:
-                print('?')
+                print('?????')
+                time.sleep(1)
         while bet > fichas:
             time.sleep(1)
             print('Você não tem tantas fichas!')
@@ -125,10 +127,15 @@ if comeout == True:
                 try:
                     bet = int(input('Quantas fichas você quer apostar?: '))
                 except ValueError:
-                    print('?')
+                    print('?????')
+                    time.sleep(1)
         time.sleep(1)
+        # Apostas multiplas
+        #n_apostas = int(input('Quantas apostas você quer fazer?: '))
+        #if n_apostas == 1:
         aposta = input('Que tipo de aposta você quer fazer?: ')
-        while aposta != 'Pass Line Bet' and aposta != 'Field' and aposta != 'Any Craps' and aposta != 'Twelve':
+        #while aposta != 'Pass Line Bet' and aposta != 'Field' and aposta != 'Any Craps' and aposta != 'Twelve':
+        while 'Pass Line Bet' not in aposta and 'Field' not in aposta and 'Any Craps' not in aposta and 'Twelve' not in aposta:
             # Apostas disponíveis (?)        
             if aposta == "?":
                 if comeout == True:
@@ -143,7 +150,7 @@ if comeout == True:
 
 
         # Aposta Pass Line Bet   
-        if aposta == "Pass Line Bet":
+        if "Pass Line Bet" in aposta:
             time.sleep(1)
             print('Aposta: Pass Line Bet')
             d1 = [1,2,3,4,5,6]
@@ -158,7 +165,7 @@ if comeout == True:
             time.sleep(1)
             print('.')
             time.sleep(1)
-            print('A soma dos lançamentos dos dados é {0}'.format(soma))
+            print('A soma do lançamento dos dados é {0}'.format(soma))
             if soma == 7 or soma == 11:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet))
@@ -240,7 +247,7 @@ if comeout == True:
 
 
         # Aposta Field
-        if aposta == "Field":
+        if "Field" in aposta:
             time.sleep(1)
             print('Aposta: Field')
             d1 = [1,2,3,4,5,6]
@@ -255,7 +262,7 @@ if comeout == True:
             time.sleep(1)
             print('.')
             time.sleep(1)
-            print('A soma dos lançamentos dos dados é {0}'.format(soma))
+            print('A soma do lançamento dos dados é {0}'.format(soma))
             if soma == 5 or soma == 6 or soma == 7 or soma == 8:
                 time.sleep(1)
                 print('Você não ganhou a aposta e perdeu {0} fichas!.'.format(fichas))
@@ -286,7 +293,7 @@ if comeout == True:
 
 
         # Aposta Any Craps
-        if aposta == "Any Craps":
+        if "Any Craps" in aposta:
             time.sleep(1)
             print('Aposta: Any Craps')
             d1 = [1,2,3,4,5,6]
@@ -301,7 +308,7 @@ if comeout == True:
             time.sleep(1)
             print('.')
             time.sleep(1)
-            print('A soma dos lançamentos dos dados é {0}'.format(soma))
+            print('A soma do lançamento dos dados é {0}'.format(soma))
             if soma == 2 or soma == 3 or soma == 12:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet*7))
@@ -322,7 +329,7 @@ if comeout == True:
 
 
         # Aposta Twelve
-        if aposta == "Twelve":
+        if "Twelve" in aposta:
             time.sleep(1)
             print('Aposta: Twelve')
             d1 = [1,2,3,4,5,6]
@@ -337,7 +344,7 @@ if comeout == True:
             time.sleep(1)
             print('.')
             time.sleep(1)
-            print('A soma dos lançamentos dos dados é {0}'.format(soma))
+            print('A soma do lançamento dos dados é {0}'.format(soma))
             if soma == 12:
                 time.sleep(1)
                 print('Você ganhou a aposta e conseguiu {0} fichas!'.format(bet*30))
