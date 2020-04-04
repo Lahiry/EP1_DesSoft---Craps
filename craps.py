@@ -153,6 +153,7 @@ if comeout == True:
         if "Pass Line Bet" in aposta:
             # Verificando se pass_line_bet_bet é um número inteiro positivo
             while True:
+                time.sleep(1)
                 plb = input('Quantas fichas você quer apostar em Pass Line Bet?: ')
                 try:
                     pass_line_bet_bet = int(plb)
@@ -195,6 +196,7 @@ if comeout == True:
         if "Field" in aposta:
             # Verificando se field_bet é um número inteiro positivo
             while True:
+                time.sleep(1)
                 fld = input('Quantas fichas você quer apostar em Field?: ')
                 try:
                     field_bet = int(fld)
@@ -237,6 +239,7 @@ if comeout == True:
         if "Any Craps" in aposta:
             # Verificando se any_craps_bet é um número inteiro positivo
             while True:
+                time.sleep(1)
                 cps = input('Quantas fichas você quer apostar em Any Craps?: ')
                 try:
                     any_craps_bet = int(cps)
@@ -279,6 +282,7 @@ if comeout == True:
         if "Twelve" in aposta:
             # Verificando se twelve_bet é um número inteiro positivo
             while True:
+                time.sleep(1)
                 tlv = input('Quantas fichas você quer apostar em Twelve?: ')
                 try:
                     twelve_bet = int(tlv)
