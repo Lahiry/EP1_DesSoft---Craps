@@ -1,3 +1,8 @@
+'''
+EP1 Design de Software - Craps
+Desenvolvedor: Raphael Lahiry de Barros
+'''
+
 # Importando bibliotecas necessárias
 import sys 
 import time
